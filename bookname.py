@@ -11,7 +11,7 @@ Bk=rq.get(url=Burl, headers=Bheader)
 BkBeautiful = BeautifulSoup(Bk.content,'html.parser')
 
 Bkfind= BkBeautiful.find_all('h3')
-(nameofbook=[{'Name': i.text} for i in Bkfind])
+nameofbook=[{'Name': i.text} for i in Bkfind]
 nameofbookdf=pd.DataFrame(nameofbook)
 nameofbookdf.to_csv('Bookname.csv')
 
